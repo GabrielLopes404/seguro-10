@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 100% 98%;
+    --foreground: 213 45% 15%;
+
+    --primary: 47 92% 53%;
+    --primary-foreground: 213 45% 15%;
+
+    --secondary: 213 52% 23%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 150 50% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 45 30% 93%;
+    --muted-foreground: 213 20% 45%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 45% 15%;
+
+    --border: 45 20% 88%;
+    --ring: 47 92% 53%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(47, 92%, 53%), hsl(150, 50%, 36%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(213, 52%, 23%) 0%,
+      hsl(213, 52%, 18%) 50%,
+      hsl(213, 52%, 13%) 100%
+    );
+  }
+
+  .bg-section-gradient {
+    background: linear-gradient(
+      180deg,
+      hsl(48, 100%, 98%) 0%,
+      hsl(45, 30%, 95%) 100%
+    );
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .glass-effect-dark {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(27, 58, 92, 0.9);
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(245, 197, 24, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(45, 30%, 93%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(213, 52%, 23%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(47, 92%, 53%);
+}
+
+/* Mobile tap highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
